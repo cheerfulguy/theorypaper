@@ -1,0 +1,343 @@
+\title{\textsc{Make or Spy?}}
+\author{
+        \textsc{Abhishek Nagaraj} \\
+         \small{\url{nagaraj@mit.edu}}
+        %%\small{MIT Sloan School of Management}\\
+        %%\small{50 Memorial Drive, E62-368,}\\
+        %% \small{Cambridge, MA 02142}\\
+}
+\date{\today}
+
+\documentclass[12pt]{article}
+
+\usepackage{url}
+\usepackage{nicefrac}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{10pt}
+
+    \newtheorem{theorem}{Theorem}[section]
+    \newtheorem{lemma}[theorem]{Lemma}
+    \newtheorem{proposition}[theorem]{Proposition}
+    \newtheorem{corollary}[theorem]{Corollary}
+
+    \newenvironment{proof}[1][Proof]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+    \newenvironment{definition}[1][Definition]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+    \newenvironment{example}[1][Example]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+    \newenvironment{remark}[1][Remark]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
+    \newcommand{\qed}{\nobreak \ifvmode \relax \else
+          \ifdim\lastskip<1.5em \hskip-\lastskip
+          \hskip1.5em plus0em minus0.5em \fi \nobreak
+          \vrule height0.75em width0.5em depth0.25em\fi}
+
+
+\maketitle
+
+\begin{abstract}
+\end{abstract}
+
+\section{Setup}
+
+Upstream good $P$ (``platform'') and
+downstream good $A$ (``application'') are supplied by two monopoly suppliers. Product $P$ can be consumed independently while product $A$ can
+only be consumed in conjunction with $P$.  Fixed costs of entry
+for $A$ are $C_A$ while those for $P$ are normalized to zero and all
+marginal costs are zero. Consumers are indexed by $i$
+($i \in \mathbb{R}^+$) and have valuations $V_P^i$ and  $V_A^i$ over the
+two items. These are defined as $V_P^i = V_P - i -p$ and  $V_A^i =  V_A -
+ki -(p+\rho)$ where $p$ is the price of $P$ and $\rho$ the price for $A$.
+Each consumer consumes at most one unit of each good. 
+
+In this setting I study the following problem:
+
+What are equilibrium revenues $R_P$ and $R_A$ when the two producers play a sequential
+pricing game where $p$ is announced in stage 1 and
+conditional on entry $\rho$ in stage 2? 
+
+%examples from real life? platform+app, OS+app, theme park + seller, 
+
+
+\section{Solution}
+
+The setup is completely described by three key parameters: \{$V_P$\}
+characterizing $P$ and \{$V_A$, $k$\} characterizing $A$. 
+With respect to $V_P$, I define four types of $A$ by splitting the
+parameter space as follows:
+\begin{center}
+
+\begin{tabular}{ | l | c  r |}
+
+\hline 
+
+             & $V_P>\nicefrac{V_A}{k}$ & $V_P<\nicefrac{V_A}{k}$ \\ \hline
+  $V_A>V_P$  & High Type & Good Type \\ 
+   $V_A<V_P$ & Bad Type & Low Type \\ 
+\hline
+\end{tabular}
+
+\end{center}
+
+
+A solution for each of these four types is given below. 
+
+\begin{enumerate}
+
+\item \textbf{Bad Types} \\
+In equilibrium, $R_A=0$ and $R_P=\nicefrac{V_P^2}{4}$
+with $p=\nicefrac{V_p}{2}$ and $\rho=0$ with no entry from $A$.
+
+\item \textbf{Good Types} \\
+In equilibrium, $R_A=0$ and $R_P=\nicefrac{V_P^2}{4}$
+with $p=\nicefrac{V_p}{2}$ and $\rho=0$ with no entry from $A$.
+
+
+
+\end{enumerate}
+
+
+
+
+
+
+In what follows I show that under certain conditions only
+sufficiently ``specialized'' ideas (\emph{sufficiently} high or \emph{sufficiently}
+low type) do not face hold-up. The nature of the problem is
+not symmetric between the high and low types and is more acute for
+low types. Because General ideas face hold-up at all times, a
+well-known result in the literature on bundling, I will focus on
+high/low types.  (insert a section on how general applications relates
+to bundling, double marginalization etc)
+
+Further, in the analysis both the platform and the developer have zero marginal
+costs. The fixed cost for the Platform is assumed to be zero for
+simplicity. 
+
+\subsection{Timing}
+The two players, the platform and the developer play a pricing game that is described as
+follows: 
+\begin{itemize}
+\item \textbf{Period 1}: Platform specifies access price $p$. In extensions of
+  the model the platform will be able to specify a number of
+  contracting mechanisms including charging a royalty based on
+  application sales but in the baseline model the platform makes
+  no direct revenue from developers (\`a la Microsoft Windows).
+\item  \textbf{Period 2}: Developer makes entry decision by incurring fixed cost
+  of entry $C_E$ and sets price $\rho$ for the application
+\item  \textbf{Period 3}: Platform decides whether it wants to imitate the application's idea at
+  cost $C_I$. If it imitates the application then (a) the only
+  available product on the market is the platform with the application
+  baked in\footnote{why no mixed bundling?}. The developer is driven
+  out of business (has zero revenue).\footnote{justification?}
+\item  \textbf{Period 4}: Consumers make purchase decisions and payoffs are
+  realized. 
+\end{itemize}
+
+
+\section{Solution}
+
+Define $i^*$ such that $V_{i^*}^P=V_{i^*}^A$ i.e. the consumer who
+has no marginal (positive or negative) valuation for the
+application. Consumer $i^*$ exists only for high/low type of
+applications and is unique. It is easy to see that
+$i^*=\nicefrac{(V_P-V_A)}{(1-k)}$. Let $V^{i^*}_P =
+V^{i^*}_A = V^{i^*}$
+
+\subsection{Period 2: Specifying the Developer's problem}
+
+In the section I derive the developer's demand $D(p,\rho)$.
+
+Consumer $i$ demands the application if she satisfies the following two constraints:
+
+\begin{equation}
+\label{eq:ic}
+V_A^i>V_P^i
+\end{equation}
+
+\begin{equation}
+\label{eq:pc}
+V_A^i>0
+\end{equation}
+
+I will call equation (\ref{eq:ic}) the incentive constraint(IC) and
+equation (\ref{eq:pc}) the
+participation constraint(PC). 
+
+Rewriting, IC becomes: $$i(1-k)>p-(V_A-V_P)$$ and PC becomes $$i<\frac{V_A-(p+\rho)}{k}$$
+
+These two constraints bind in different ways for high and low
+types to generate different demand for each type as follows:
+
+\begin{proposition}
+\label{prop1}
+In Period 2 for high types, the best response to a price $p$ set by the platform in
+Period 1 is given by:\[ \rho^* = 
+\begin{cases}
+%%  \frac{V_A-V_P}{2} & \text{if $p < \frac{kV_P-V_A}{k-1}$} \\
+%%  \frac{V_A-p}{2} & \text{if $p > V_P$} \\
+%%  \text{solution} & \text{otherwise}
+
+  \frac{V_A-V_P}{2} & \text{if $p < \frac{V_P(2k-1)-V_A}{2(k-1)}$} \\
+  \frac{V_A-p}{2} & \text{if $p > \frac{2kV_P-V_A}{2k-1}$} \\
+  (k-1)p-(kV_P-V_A) & \text{otherwise}
+
+
+\end{cases} \]
+\end{proposition}
+
+\begin{proof}
+
+Proof goes here
+
+% To begin note that because in this case $k>1$, 
+% the IC becomes: $$i<\frac{(V_A-V_P)-\rho}{(k-1)}$$ and PC
+% remains $$i<\frac{V_A-(p+\rho)}{k}$$
+
+% Therefore demand for the application 
+% $$D(p,\rho)=Min\left[\frac{(V_A-V_P)-\rho}{(k-1)},
+%   \frac{V_A-(p+\rho)}{k}\right]$$. 
+
+% Define $\tilde{\rho}(p)=(k-1)p-(kV_P-V_A)$. Then we have the following
+% demand function:\[ D(p,\rho) = 
+% \begin{cases}
+%   \frac{(V_A-V_P)-\rho}{(k-1)}  & \text{if $\rho>\tilde{\rho}(p)$ (IC binds)} \\
+%   \frac{V_A-(p+\rho)}{k}   & \text{if $\rho<\tilde{\rho}(p)$ (PC binds)}
+% \end{cases} \]
+
+% The the developer's maximization problem is:
+% $$\displaystyle \max_\rho \rho D(p,\rho)$$
+
+% Now we use the condition that $0<\rho<(V_A-V_P)$ to obtain the result
+% stated in Proposition \ref{prop1}. 
+
+% \begin{align}
+% \label{eq:cond1}
+% 0<p<\frac{kV_P-V_A}{(k-1)}  & \implies  \tilde{\rho}<0 & \text{IC
+%   binds always}\\
+% \label{eq:cond2}
+% V_A>p>V_P & \implies \tilde{\rho}>V_A-V_P  & \text{PC binds always}
+% \end{align}
+
+% Therefore when we are in the case specified by equation (\ref{eq:cond1}) the
+% developer solves \[\rho^* = \displaystyle \max_\rho \left[ \rho \;
+%   \frac{(V_A-V_P)-\rho}{(k-1)} \right] = \frac{V_A-V_P}{2}\] 
+
+% And when we are in the case specified by equation (\ref{eq:cond2}) the
+% developer solves \[\rho^* = \displaystyle \max_\rho \left[ \rho \;
+%    \frac{V_A-(p+\rho)}{k}  \right] = \frac{V_A-p}{2}\] 
+
+% Now consider the case when $\frac{kV_P-V_A}{k-1}<p<V_P$. We are
+% looking for a $\rho$ subject to $p<\rho<V_A$ that maximizes
+% revenue. 
+
+% Now, when $p<\rho<\tilde{\rho}$ revenue is given by: 
+
+% \begin{align*}
+% \underline{\rho}^* = \displaystyle & \max_\rho \left[ \rho \; \frac{(V_A-p)-\rho}{k}
+% \right]\\\\
+% &ST: \;\; p<\rho<\tilde{\rho}\\
+% \end{align*}
+
+% The solution to the above problem is $\frac{V_A-p}{2}$ given that $\frac{k}{k-1}>\frac{V_A}{V_P}$\footnote{check}
+
+
+% When $\tilde{\rho}<\rho<V_A$ revenue is given by: 
+
+% \begin{align*}
+% \bar{\rho}^* = \displaystyle & \max_\rho \left[ \rho \; \frac{(V_A-V_P)-\rho}{k}
+% \right]\\\\
+% &ST: \;\; \tilde{\rho}<\rho<V_P\\
+% \text{revenue:}
+% \end{align*}
+
+
+\end{proof}
+
+The intuition for the result in \ref{prop1} is as follows: 
+
+When the platform's price is \emph{sufficiently low} the developer is able to
+target his entire captive audience (all $i$ such that $V_A^i > V_P^i$)
+and price like a monopolist over the consumer base. Note that the
+optimal price does not depend upon the exact value of $p$. Therefore
+effectively in this case every consumer who values the application
+sufficiently higher than the platform buys the application in
+equilibrium, while everyone else with $V_P^i>0$ buys just the platform.
+
+When the platform's price is \emph{sufficiently high} only the
+Participation Constraint binds. This means that buying just the
+platform is not valuable for \emph{any} consumer, and \emph{everyone}
+who buys the platform must also purchase the app. Formally, $V_P^i<0
+\; \forall \; i$. In this case the platform is forgoing additional
+userbase (by pricing them out) in order to get a larger share of the application's
+revenue by increasing the platform's price.
+
+\begin{proposition}
+\label{prop2}
+In Period 1, against high types the platform plays the following strategy:
+Set equilibrium price in this period:\[ p^* = 
+\begin{cases}
+
+  \frac{V_A}{2} & \text{if ${V_P^2}<\nicefrac{V_A^2}{2k}$} \\
+  \frac{V_P}{2} & \text{if ${V_P^2}>\nicefrac{V_A^2}{2k}$} \\
+
+\end{cases} \]
+
+\end{proposition}
+
+\begin{proof}
+Proof goes here
+\end{proof}
+
+The intuition for the result in \ref{prop2} is straightforward. When a
+potential application is substantially more valuable (i.e. when
+$\nicefrac{V_A^2}{2k}>V_P^2$), the platform decides to forgo monopoly
+revenue from the platform itself to capturing additional revenue from
+those who have a high valuation from the application. In this
+case, everyone who buys the platform also buys the
+application. 
+
+Now we turn to analyzing the case where the potential application is
+of the ``low'' type.
+
+
+\begin{proposition}
+\label{prop3}
+When the potential application is of the low type, i.e. when
+$V_A<V_P<\nicefrac{V_A}{k}$ in equilibrium, 
+\begin{enumerate}
+
+\item it is definitely the case
+that some consumers buy the platform without buying applications.
+
+\item the application cannot make positive revenues when
+  $\frac{2V_A}{k+1}<V_P$
+
+\item the platform always prices at $p=\frac{V_P}{2}$
+
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Proof goes here
+\end{proof}
+
+
+
+\section{Data}
+test
+\section{Conclusion}
+test
+
+\bibliographystyle{abbrv}
+\bibliography{main}
+
+\end{document}
+This is never printed
+}
